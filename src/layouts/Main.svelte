@@ -1,6 +1,24 @@
-<div class="container">
-  <div class="content">
-    <slot />
+<script>
+  import SideBar from "./shared/SideBar.svelte";
+  import Navbar from "./shared/Navbar.svelte";
+</script>
+
+<Navbar />
+
+<div class="section">
+  <div class="columns">
+    <SideBar />
+
+    <main class="column">
+      <!-- <Header /> -->
+      <slot name="header" />
+
+      <div class="columns">
+        <div class="column">
+          <slot />
+        </div>
+      </div>
+    </main>
   </div>
 </div>
 
