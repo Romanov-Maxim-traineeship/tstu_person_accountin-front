@@ -32,4 +32,7 @@
     align-items: center;
     justify-content: center;
   }
+  .sidebar-wraaper {
+    min-width: 240px;
+  }
 </style>

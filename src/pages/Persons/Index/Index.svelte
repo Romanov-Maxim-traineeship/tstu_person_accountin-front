@@ -1,11 +1,12 @@
 <script>
   import { onMount } from "svelte";
-  import { Button } from "svelma";
+  import { link } from "svelte-routing";
 
   import { pushSnackbar } from "utils/common";
   import { getPersons } from "apiAdapter/persons";
 
   import Header from "components/Header";
+  import DropDown from "components/DropDown";
 
   import Table from "./shared/Table.svelte";
 
@@ -33,8 +34,17 @@
   });
 </script>
 
-<Header />
+<Header title="Persons">
+  <div slot="extra">
+    <div>
+      <div class="buttons">
+        <a class="button is-link" href="/persons/new" use:link>Add New</a>
+        <DropDown />
+      </div>
+    </div>
+  </div>
+</Header>
 
-<div>
+<div class="mt-5">
   <Table {persons} {loading} />
 </div>

@@ -1,10 +1,21 @@
+<script>
+  let isOpen = false;
+
+  const toogle = () => (isOpen = !isOpen);
+</script>
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
     </a>
 
+    <a class="navbar-item is-active">Home</a>
+
+    <a class="navbar-item">Documentation</a>
+
     <a
+      on:click={toogle}
       role="button"
       class="navbar-burger burger"
       aria-label="menu"
@@ -16,7 +27,7 @@
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu {isOpen && 'is-active'}">
     <div class="navbar-start">
       <a class="navbar-item is-active">Home</a>
 

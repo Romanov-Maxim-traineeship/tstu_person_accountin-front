@@ -1,4 +1,4 @@
-<aside class="column is-2 mr-5">
+<aside class="column is-3 mr-5">
   <nav class="menu">
     <p class="is-size-6 menu-label">Administration</p>
     <ul class="is-size-6 menu-list">

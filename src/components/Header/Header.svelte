@@ -1,12 +1,16 @@
+<script>
+  export let title;
+</script>
+
 <div class="level">
   <div class="level-left">
     <div class="level-item">
-      <div class="title">Dashboard</div>
+      <div class="title">{title}</div>
     </div>
   </div>
   <div class="level-right">
     <div class="level-item">
-      <button type="button" class="button is-small">March 8, 2017 - April 6, 2017</button>
+      <slot name="extra" />
     </div>
   </div>
 </div>

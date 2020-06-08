@@ -7788,6 +7788,11 @@ svelma@^0.3.2:
   resolved "https://registry.yarnpkg.com/svelma/-/svelma-0.3.2.tgz#ef90d4f8ed3f6424a2415ff397593fd9069d72d3"
   integrity sha512-PWs4yAr2+NWnFqfUgQF+du+1oZr7mgcxv/4Le6dZwOneskabEQ3rAbRIOo0n5r2R65L3JbzV64vzfoADlylt5Q==
 
+svelte-click-outside@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-click-outside/-/svelte-click-outside-1.0.0.tgz#94a823779e3613ae0bdadc53f26916fdd64cb09e"
+  integrity sha512-TVDn5Vd8L0WI0Y9BFh/2I7judkIqYCbFKkGwGl/f8D0inwBFNyU0weKhrbJY4VQtYnWriq0NPl+mIYGisgALbw==
+
 svelte-dev-helper@^1.1.9:
   version "1.1.9"
   resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.9.tgz#7d187db5c6cdbbd64d75a32f91b8998bde3273c3"
@@ -7821,10 +7826,10 @@ svelte-routing@^1.4.2:
   resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.4.2.tgz#291160b537c9c73e711731eb099c48bb24cc3419"
   integrity sha512-CSCKRLeOp9vjsDGGOEgL9DPm9HZLgZuTNehyTCl3K+6fCVH1Aw/K/WicavAVNcbsHmdR4wgF//0YVR9hrcdvGA==
 
-svelte@^3.4.4:
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.4.4.tgz#8dcb60796b2b5a47175371f0763a612bf33a0944"
-  integrity sha512-O9tzroEWVPOQe1QITW1jP8LAJwXmCfDDGdkOCa9Y6NlJ+gQwn+/rhFbMQ+vu2PWPLZt1gxN8DjTFM4nOBuMLFg==
+svelte@^3.23.0:
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.23.0.tgz#bbcd6887cf588c24a975b14467455abfff9acd3f"
+  integrity sha512-cnyd96bK/Nw5DnYuB1hzm5cl6+I1fpmdKOteA7KLzU9KGLsLmvWsSkSKbcntzODCLmSySN3HjcgTHRo6/rJNTw==
 
 svgo@^1.0.0:
   version "1.2.2"

@@ -1,6 +1,7 @@
 export const ROOT_URL = "/";
 export const PERSONS_URL = "/persons";
 export const PERSON_URL = "/persons/:personId";
+export const PERSON_NEW_URL = "/persons/new";
 
 export const getPath = (path, params) => {
   let result = path;
