@@ -6,9 +6,9 @@
   import { getPersons } from "apiAdapter/persons";
 
   import Header from "components/Header";
-  import DropDown from "components/DropDown";
 
   import Table from "./shared/Table.svelte";
+  import ExportMenu from "./shared/ExportMenu.svelte";
 
   let persons = [];
   let loading = false;
@@ -39,7 +39,7 @@
     <div>
       <div class="buttons">
         <a class="button is-link" href="/persons/new" use:link>Add New</a>
-        <DropDown />
+        <ExportMenu />
       </div>
     </div>
   </div>

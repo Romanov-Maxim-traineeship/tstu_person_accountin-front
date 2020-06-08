@@ -1,40 +1,92 @@
 <script>
-  import { Icon } from "svelma";
-
   import { createEventDispatcher } from "svelte";
+  import { Button } from "svelma";
   import * as transitions from "svelte/transition";
   import ClickOutside from "svelte-click-outside";
   const dispatch = createEventDispatcher();
 
   export let isOpen;
-
+  export let name;
+  export let left;
+  export let maxHeight = "25rem";
   export let animation = "slide";
+
+  let triggerEl;
 
   const toggle = () => dispatch("change", !isOpen);
   const close = () => dispatch("change", false);
-
   const animationType = transitions[animation];
 </script>
 
-<ClickOutside on:clickoutside={close}>
-  <div class="dropdown {isOpen && 'is-active'}">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" on:click={toggle}>
-        <span>Dropdown button</span>
-        <Icon pack="fab" size="is-large" icon="github" />
-      </button>
-    </div>
-    {#if isOpen}
-      <div class="dropdown-menu" id="dropdown-menu" role="menu" transition:animationType|local>
-        <div class="dropdown-content">
-          <a href="#" class="dropdown-item">Dropdown item</a>
-          <a class="dropdown-item">Other dropdown item</a>
-          <a href="#" class="dropdown-item is-active">Active dropdown item</a>
-          <a href="#" class="dropdown-item">Other dropdown item</a>
-          <hr class="dropdown-divider" />
-          <a href="#" class="dropdown-item">With a divider</a>
-        </div>
+<ClickOutside on:clickoutside={close} exclude={[triggerEl]} />
+<div class="dropdown" class:isOpen>
+  <div class="dropdown__trigger">
+    <Button
+      bind:this={triggerEl}
+      on:click={(e) => {
+        e.stopPropagation();
+        toggle();
+      }}>
+      <div class="button_container" class:isOpen>
+        <span class="button_name">{name}</span>
+        <span class="button_indicator">
+          <i class="fas fa-chevron-down" />
+        </span>
       </div>
-    {/if}
+    </Button>
   </div>
-</ClickOutside>
+  {#if isOpen}
+    <div class="dropdown__items" style="max-height: {maxHeight}" class:left transition:animationType|local>
+      <slot />
+    </div>
+  {/if}
+</div>
+<!-- </ClickOutside> -->
+
+<style>
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown__trigger {
+    font-size: var(--font_size-base);
+    width: 100%;
+    display: flex;
+  }
+
+  .dropdown__items {
+    min-width: 100%;
+    position: absolute;
+    top: 85%;
+    background-color: #fff;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.4rem;
+    overflow-x: scroll;
+    z-index: 10;
+    right: -1px;
+  }
+
+  .left {
+    left: -1px;
+    right: auto;
+  }
+
+  .button_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button_name {
+    margin-right: 10px;
+  }
+
+  .button_indicator {
+    margin-bottom: -1px;
+    transition: transform 0.5s;
+  }
+
+  .isOpen .button_indicator {
+    transform: rotate(-180deg);
+  }
+</style>
