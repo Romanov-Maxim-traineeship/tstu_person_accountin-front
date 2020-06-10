@@ -28,9 +28,9 @@
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu {isOpen && 'is-active'}">
-    {#if isOpen}
-      <div class="navbar-start" transition:slide|local>
+  {#if isOpen}
+    <div id="navbarBasicExample" class="navbar-menu {isOpen && 'is-active'}" transition:slide|local>
+      <div class="navbar-start">
         <a class="navbar-item is-active">Home</a>
 
         <a class="navbar-item">Documentation</a>
@@ -47,17 +47,17 @@
         </div>
       </div> -->
       </div>
-    {/if}
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">Log in</a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">Log in</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {/if}
 </nav>
