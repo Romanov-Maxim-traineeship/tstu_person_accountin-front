@@ -46,5 +46,5 @@
 </Header>
 
 <div class="mt-5">
-  <Table {persons} {loading} />
+  <Table {persons} {loading} {getData} />
 </div>

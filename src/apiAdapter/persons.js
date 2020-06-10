@@ -10,6 +10,10 @@ export const getPerson = (personId) => {
   return axios.get(getPath(PERSON_URL, { personId })).then(({ data }) => data);
 };
 
+export const deletePerson = (personId) => {
+  return axios.delete(getPath(PERSON_URL, { personId })).then(({ data }) => data);
+};
+
 export const createPerson = (d) => {
   return axios.post(PERSONS_URL, d).then(({ data }) => data);
 };

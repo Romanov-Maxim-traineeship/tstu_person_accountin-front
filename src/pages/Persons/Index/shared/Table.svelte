@@ -1,11 +1,28 @@
 <script>
   import { Link } from "svelte-routing";
-  import { propOr, prop } from "ramda";
+  import { compose, propOr, prop } from "ramda";
+  import { Dialog } from "svelma";
+  import { deletePerson } from "apiAdapter/persons";
 
   import { getPath, PERSON_URL } from "constants/routes";
 
   export let persons = [];
   export let loading = false;
+  export let getData;
+
+  function deleteConfirm(person) {
+    return Dialog.confirm({
+      message: `Are u sure to delete ${propOr("N/A", "firstName", person)}?`,
+      title: "Delete Person",
+      type: "is-danger",
+      icon: "times-circle",
+    }).then(
+      compose(
+        getData,
+        () => deletePerson(prop("_id", person)),
+      ),
+    );
+  }
 </script>
 
 <table class="table is-fullwidth">
@@ -18,7 +35,7 @@
     </tr>
   </thead>
   <tbody>
-    {#each persons as person}
+    {#each persons as person, i (person._id)}
       <tr>
         <!-- <td><figure class="image"><img class="is-rounded" src="{user.picture.thumbnail}" alt=""></figure></td> -->
         <td>{propOr('N/A', 'image', person)}</td>
@@ -31,7 +48,7 @@
             </span>
           </Link>
 
-          <span class="icon">
+          <span class="icon" on:click={() => deleteConfirm(person)}>
             <i class="fas fa-trash has-text-danger " />
           </span>
 

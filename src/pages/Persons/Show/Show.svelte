@@ -17,8 +17,8 @@
 
   const submitHandler = async (d) => {
     try {
-      const { firstName } = await updatePerson(personId, dissoc("_id", d));
-      pushToast("success", `${firstName} success updated`);
+      await updatePerson(personId, dissoc("_id", d));
+      pushToast("success", `Person success updated`);
       navigate(PERSONS_URL);
     } catch (error) {
       console.log("error :>> ", error);
