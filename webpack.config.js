@@ -41,6 +41,7 @@ const svelteConfig = {
     alias: {
       svelte: path.resolve("node_modules", "svelte"),
       constants: path.resolve(__dirname, "src/constants/"),
+      assets: path.resolve(__dirname, "src/assets/"),
       utils: path.resolve(__dirname, "src/utils/"),
       components: path.resolve(__dirname, "src/components/"),
       apiAdapter: path.resolve(__dirname, "src/apiAdapter/"),
@@ -71,6 +72,14 @@ const svelteConfig = {
           isProd ? MiniCssExtractPlugin.loader : "style-loader",
           "css-loader",
         ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: "file-loader",
+        options: {
+          outputPath: "images",
+          // name: "images/[name].[ext]",
+        },
       },
     ],
   },

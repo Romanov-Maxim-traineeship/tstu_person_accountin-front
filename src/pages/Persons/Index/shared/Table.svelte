@@ -1,10 +1,11 @@
 <script>
   import { Link } from "svelte-routing";
-  import { compose, when, propOr, prop } from "ramda";
+  import { isEmpty, compose, when, propOr, prop } from "ramda";
   import { Dialog } from "svelma";
   import { deletePerson } from "apiAdapter/persons";
 
   import { getPath, PERSON_URL } from "constants/routes";
+  import defaultImg from "assets/default_avatar.png";
 
   export let persons = [];
   export let loading = false;
@@ -31,6 +32,7 @@
       <th class="header_cell" />
       <th class="header_cell">First Name</th>
       <th class="header_cell">Last Name</th>
+      <th class="header_cell">Gender</th>
       <th class="header_cell" />
     </tr>
   </thead>
@@ -38,9 +40,16 @@
     {#each persons as person, i (person._id)}
       <tr>
         <!-- <td><figure class="image"><img class="is-rounded" src="{user.picture.thumbnail}" alt=""></figure></td> -->
-        <td>{propOr('N/A', 'image', person)}</td>
+        {#if isEmpty(propOr('image', person))}
+          <td>{propOr('image', person)}</td>
+        {:else}
+          <td>
+            <img src={defaultImg} class="default_img" />
+          </td>
+        {/if}
         <td>{propOr('N/A', 'firstName', person)}</td>
         <td>{propOr('N/A', 'lastName', person)}</td>
+        <td>{propOr('N/A', 'gender', person)}</td>
         <td style="text-align: right;">
           <Link to={getPath(PERSON_URL, { personId: prop('_id', person) })}>
             <span class="icon">
@@ -78,5 +87,11 @@
     position: sticky;
     top: 0;
     background-color: #fff;
+  }
+
+  .default_img {
+    width: 40px;
+    border-radius: 50%;
+    margin-bottom: -7px;
   }
 </style>
