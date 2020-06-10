@@ -11,8 +11,10 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+    <a class="navbar-item" href="/">
+      <img
+        src="https://lh3.googleusercontent.com/proxy/0V_f2nWcDiU8GAURWNKsTurshr-aBgtXeLrH855uuVd9-mRnVyD2wgbjfvZq-B57U-5RERi6Eacj1xnA48n5WFMfYgW3hjEDqz4HBwGlwmzf"
+        height="28" />
     </a>
 
     <Link to="/" let:isActive>

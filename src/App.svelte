@@ -1,7 +1,8 @@
 <script>
   import "bulma/css/bulma.css";
+  import { onMount } from "svelte";
 
-  import { Router, Route } from "svelte-routing";
+  import { Router, Route, navigate } from "svelte-routing";
 
   import MainLayout from "./layouts/Main.svelte";
 
@@ -11,6 +12,10 @@
   import Persons from "./pages/Persons/Index";
 
   export let url = "";
+
+  onMount(() => {
+    navigate(PERSONS_URL);
+  });
 </script>
 
 <svelte:head>

@@ -1,7 +1,7 @@
 <script>
   import { dissoc } from "ramda";
   import { onMount } from "svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate, link } from "svelte-routing";
   import { getPerson, updatePerson } from "apiAdapter/persons";
   import { pushToast } from "utils/common";
 
