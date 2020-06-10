@@ -90,14 +90,15 @@
   },
   "dependencies": {
     "bulma": "^0.9.0",
-    "electron-is-dev": "^1.1.0",
+    "bulma-extensions": "^6.2.7",
+    "electron-is-dev": "^1.2.0",
     "node-sass": "^4.14.1",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
     "ramda": "^0.27.0",
     "sass": "^1.26.8",
     "svelma": "^0.3.2",
-    "svelte": "^3.23.0",
+    "svelte": "^3.23.1",
     "svelte-click-outside": "^1.0.0",
     "svelte-routing": "^1.4.2",
     "svelte-select": "^3.8.1"

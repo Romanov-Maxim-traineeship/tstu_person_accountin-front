@@ -1,20 +1,31 @@
+<script>
+  import { link } from "svelte-routing";
+  import Link from "components/Link.svelte";
+</script>
+
 <aside class="column is-3 mr-5">
   <nav class="menu">
     <p class="is-size-6 menu-label">Administration</p>
     <ul class="is-size-6 menu-list">
       <li>
-        <a class="is-size-6 is-active">Manage Persons</a>
+        <a href="/persons" class="is-size-6" use:link>Manage Persons</a>
         <ul>
           <li>
-            <a>Persons list</a>
+            <Link to="/persons" let:isActive isUniq>
+              <a href="/persons" class="is-size-6 {isActive && 'is-active'}" use:link>Persons list</a>
+            </Link>
           </li>
           <li>
-            <a>Add new</a>
+            <Link to="/persons/new" let:isActive isUniq>
+              <a href="/persons/new" class="is-size-6 {isActive && 'is-active'}" use:link>Add new</a>
+            </Link>
           </li>
         </ul>
       </li>
       <li>
-        <a>Authentication</a>
+        <Link to="/auth" let:isActive>
+          <a href="/auth" class="is-size-6 {isActive && 'is-active'}" use:link>Authorization</a>
+        </Link>
       </li>
     </ul>
   </nav>

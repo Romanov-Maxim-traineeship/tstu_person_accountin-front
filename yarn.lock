@@ -1052,6 +1052,11 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
+bulma-extensions@^6.2.7:
+  version "6.2.7"
+  resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-6.2.7.tgz#f9f4d1478a7ac1606ae8db1e765aa45e3f12bb31"
+  integrity sha512-y3dHsxlCYkuxUg87KKN9H4InM8NCk8tdnrlxLkYak8sd2WQdllg3wP2Nv41lj8X46uPXX2ADP0MO65LlXPHt/Q==
+
 bulma@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.0.tgz#948c5445a49e9d7546f0826cb3820d17178a814f"
@@ -2401,10 +2406,10 @@ electron-download@^4.1.0:
     semver "^5.4.1"
     sumchecker "^2.0.2"
 
-electron-is-dev@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.1.0.tgz#b15a2a600bdc48a51a857d460e05f15b19a2522c"
-  integrity sha512-Z1qA/1oHNowGtSBIcWk0pcLEqYT/j+13xUw/MYOrBUOL4X7VN0i0KCTf5SqyvMPmW5pSPKbo28wkxMxzZ20YnQ==
+electron-is-dev@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.2.0.tgz#2e5cea0a1b3ccf1c86f577cee77363ef55deb05e"
+  integrity sha512-R1oD5gMBPS7PVU8gJwH6CtT0e6VSoD0+SzSnYpNm+dBkcijgA+K7VAMHDfnRq/lkKPZArpzplTW6jfiMYosdzw==
 
 electron-notarize@^0.2.0:
   version "0.2.1"
@@ -8279,10 +8284,10 @@ svelte-select@^3.8.1:
   resolved "https://registry.yarnpkg.com/svelte-select/-/svelte-select-3.8.1.tgz#f93b4fc3824109c6c3e158897d3df0d922f6da9a"
   integrity sha512-yzwPxayhxJv1fQ/7b0NZgrDrmSN32curWmBbzzQcdzeVmCo12X7S6Jda22I+o4+XPIRrtKeCum484VeU2AUewQ==
 
-svelte@^3.23.0:
-  version "3.23.0"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.23.0.tgz#bbcd6887cf588c24a975b14467455abfff9acd3f"
-  integrity sha512-cnyd96bK/Nw5DnYuB1hzm5cl6+I1fpmdKOteA7KLzU9KGLsLmvWsSkSKbcntzODCLmSySN3HjcgTHRo6/rJNTw==
+svelte@^3.23.1:
+  version "3.23.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.23.1.tgz#b201b9ebc25034cb23562ba284efa3e06f357b7b"
+  integrity sha512-HTKVSDHcn4ztxRl3g425pwihePXkCvn4B2gO5Y3n3GHzHZWxYM9T+l/LHs7HjJjcI7Xl7/ujnfA3S45pz0qXIg==
 
 svgo@^1.0.0:
   version "1.2.2"

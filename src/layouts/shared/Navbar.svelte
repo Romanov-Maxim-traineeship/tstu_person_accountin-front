@@ -1,6 +1,10 @@
 <script>
+  import { link } from "svelte-routing";
   import { slide } from "svelte/transition";
+  import Link from "components/Link.svelte";
+
   let isOpen = false;
+  // import tstuLogo from '../../assets/tstu_logo.svg'
 
   const toogle = () => (isOpen = !isOpen);
 </script>
@@ -11,9 +15,13 @@
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
     </a>
 
-    <a class="navbar-item is-active">Home</a>
+    <Link to="/" let:isActive>
+      <a class="navbar-item {isActive && 'is-active'}" use:link>Home</a>
+    </Link>
 
-    <a class="navbar-item">Documentation</a>
+    <Link to="/documentation" let:isActive>
+      <a class="navbar-item {isActive && 'is-active'}" use:link>Documentation</a>
+    </Link>
 
     <a
       on:click={toogle}
@@ -31,9 +39,14 @@
   {#if isOpen}
     <div id="navbarBasicExample" class="navbar-menu {isOpen && 'is-active'}" transition:slide|local>
       <div class="navbar-start">
-        <a class="navbar-item is-active">Home</a>
 
-        <a class="navbar-item">Documentation</a>
+        <Link to="/" let:isActive>
+          <a class="navbar-item {isActive && 'is-active'}">Home</a>
+        </Link>
+
+        <Link to="/documentation" let:isActive>
+          <a class="navbar-item {isActive && 'is-active'}">Documentation</a>
+        </Link>
 
         <!-- <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More</a>

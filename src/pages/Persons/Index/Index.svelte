@@ -6,6 +6,7 @@
   import { getPersons } from "apiAdapter/persons";
 
   import Header from "components/Header";
+  import Loader from "components/Loader.svelte";
 
   import Table from "./shared/Table.svelte";
   import ExportMenu from "./shared/ExportMenu.svelte";
@@ -46,5 +47,20 @@
 </Header>
 
 <div class="mt-5">
-  <Table {persons} {loading} {getData} />
+  {#if loading}
+    <div class="loader_wrapper">
+      <Loader />
+    </div>
+  {:else}
+    <Table {persons} {loading} {getData} />
+  {/if}
 </div>
+
+<style>
+  .loader_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+  }
+</style>

@@ -19,8 +19,8 @@
   </script>
 </svelte:head>
 
-<MainLayout>
-  <Router {url}>
+<Router {url}>
+  <MainLayout>
 
     <Route path={PERSON_NEW_URL} component={NewPerson} />
 
@@ -29,5 +29,5 @@
     <Route path={PERSONS_URL} component={Persons} />
 
     <Route path={ROOT_URL} component={Persons} />
-  </Router>
-</MainLayout>
+  </MainLayout>
+</Router>

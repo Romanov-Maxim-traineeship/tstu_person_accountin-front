@@ -28,10 +28,10 @@
 <table class="table is-fullwidth">
   <thead>
     <tr>
-      <th />
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th />
+      <th class="header_cell" />
+      <th class="header_cell">First Name</th>
+      <th class="header_cell">Last Name</th>
+      <th class="header_cell" />
     </tr>
   </thead>
   <tbody>
@@ -72,3 +72,11 @@
     {/each}
   </tbody>
 </table>
+
+<style>
+  .header_cell {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
+</style>
