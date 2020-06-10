@@ -5,7 +5,6 @@
   import { deletePerson } from "apiAdapter/persons";
 
   import { getPath, PERSON_URL } from "constants/routes";
-  import defaultImg from "assets/default_avatar.png";
 
   export let persons = [];
   export let loading = false;
@@ -44,7 +43,7 @@
           <td>{propOr('image', person)}</td>
         {:else}
           <td>
-            <img src={defaultImg} class="default_img" />
+            <i style="font-size: 25px;" class="fas fa-user-circle" />
           </td>
         {/if}
         <td>{propOr('N/A', 'firstName', person)}</td>
@@ -87,11 +86,5 @@
     position: sticky;
     top: 0;
     background-color: #fff;
-  }
-
-  .default_img {
-    width: 40px;
-    border-radius: 50%;
-    margin-bottom: -7px;
   }
 </style>
