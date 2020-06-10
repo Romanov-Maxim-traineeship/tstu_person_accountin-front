@@ -4,6 +4,7 @@
   import { navigate, link } from "svelte-routing";
   import { getPerson, updatePerson } from "apiAdapter/persons";
   import { pushToast } from "utils/common";
+  import Loader from "components/Loader.svelte";
 
   import Header from "components/Header";
 
@@ -12,9 +13,17 @@
 
   export let personId;
   let person = {};
+  let isLoading = false;
 
   onMount(async () => {
-    person = await getPerson(personId);
+    try {
+      isLoading = true;
+      person = await getPerson(personId);
+    } catch (error) {
+      console.log("error :>> ", error);
+    } finally {
+      isLoading = false;
+    }
   });
 
   const submitHandler = async (d) => {
@@ -40,5 +49,20 @@
 </Header>
 
 <div>
-  <Form onSubmit={submitHandler} {person} />
+  {#if isLoading}
+    <div class="loader_wrapper">
+      <Loader />
+    </div>
+  {:else}
+    <Form onSubmit={submitHandler} {person} />
+  {/if}
 </div>
+
+<style>
+  .loader_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+  }
+</style>
