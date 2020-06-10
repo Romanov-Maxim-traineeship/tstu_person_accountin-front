@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-routing";
-  import { compose, propOr, prop } from "ramda";
+  import { compose, when, propOr, prop } from "ramda";
   import { Dialog } from "svelma";
   import { deletePerson } from "apiAdapter/persons";
 
@@ -10,18 +10,18 @@
   export let loading = false;
   export let getData;
 
+  const deletePersonFromList = async (id) => {
+    await deletePerson(id);
+    await getData();
+  };
+
   function deleteConfirm(person) {
     return Dialog.confirm({
       message: `Are u sure to delete ${propOr("N/A", "firstName", person)}?`,
       title: "Delete Person",
       type: "is-danger",
       icon: "times-circle",
-    }).then(
-      compose(
-        getData,
-        () => deletePerson(prop("_id", person)),
-      ),
-    );
+    }).then(when((v) => v, () => deletePersonFromList(prop("_id", person))));
   }
 </script>
 
@@ -48,7 +48,7 @@
             </span>
           </Link>
 
-          <span class="icon" on:click={() => deleteConfirm(person)}>
+          <span class="icon" on:click={() => deleteConfirm(person)} style="cursor: pointer;">
             <i class="fas fa-trash has-text-danger " />
           </span>
 
