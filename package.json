@@ -29,6 +29,7 @@
     "dotenv-webpack": "^1.7.0",
     "electron": "^5.0.3",
     "electron-builder": "^21.2.0",
+    "electron-packager": "^14.2.1",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-svelte3": "^2.7.3",
@@ -98,6 +99,7 @@
     "svelma": "^0.3.2",
     "svelte": "^3.23.0",
     "svelte-click-outside": "^1.0.0",
-    "svelte-routing": "^1.4.2"
+    "svelte-routing": "^1.4.2",
+    "svelte-select": "^3.8.1"
   }
 }

@@ -8,6 +8,7 @@
   export let isOpen;
   export let name;
   export let left;
+  export let isLoading;
   export let maxHeight = "25rem";
   export let animation = "slide";
 
@@ -22,6 +23,7 @@
 <div class="dropdown" class:isOpen>
   <div class="dropdown__trigger">
     <Button
+      loading={isLoading}
       bind:this={triggerEl}
       on:click={(e) => {
         e.stopPropagation();
