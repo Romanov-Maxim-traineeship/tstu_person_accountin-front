@@ -1,10 +1,16 @@
 <script>
   import { link } from "svelte-routing";
   import Link from "components/Link.svelte";
+
+  let y;
+  let isSticky = true;
+  $: isSticky = y >= 770;
 </script>
 
+<svelte:window bind:innerWidth={y} />
+
 <aside class="column is-3 mr-5">
-  <nav class="menu">
+  <nav class="menu" class:isSticky>
     <p class="is-size-6 menu-label">Administration</p>
     <ul class="is-size-6 menu-list">
       <li>
@@ -30,3 +36,10 @@
     </ul>
   </nav>
 </aside>
+
+<style>
+  .isSticky {
+    position: sticky;
+    top: 50px;
+  }
+</style>
