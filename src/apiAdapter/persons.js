@@ -9,3 +9,11 @@ export const getPersons = () => {
 export const getPerson = (personId) => {
   return axios.get(getPath(PERSON_URL, { personId })).then(({ data }) => data);
 };
+
+export const createPerson = (d) => {
+  return axios.post(PERSONS_URL, d).then(({ data }) => data);
+};
+
+export const updatePerson = (personId, d) => {
+  return axios.patch(getPath(PERSON_URL, { personId }), d).then(({ data }) => data);
+};

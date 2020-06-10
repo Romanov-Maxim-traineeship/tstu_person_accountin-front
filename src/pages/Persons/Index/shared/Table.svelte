@@ -1,5 +1,8 @@
 <script>
-  import { propOr, or } from "ramda";
+  import { Link } from "svelte-routing";
+  import { propOr, prop } from "ramda";
+
+  import { getPath, PERSON_URL } from "constants/routes";
 
   export let persons = [];
   export let loading = false;
@@ -11,6 +14,7 @@
       <th />
       <th>First Name</th>
       <th>Last Name</th>
+      <th />
     </tr>
   </thead>
   <tbody>
@@ -18,8 +22,20 @@
       <tr>
         <!-- <td><figure class="image"><img class="is-rounded" src="{user.picture.thumbnail}" alt=""></figure></td> -->
         <td>{propOr('N/A', 'image', person)}</td>
-        <td>{propOr('N/A', 'first_name', person)}</td>
-        <td>{propOr('N/A', 'last_name', person)}</td>
+        <td>{propOr('N/A', 'firstName', person)}</td>
+        <td>{propOr('N/A', 'lastName', person)}</td>
+        <td style="text-align: right;">
+          <Link to={getPath(PERSON_URL, { personId: prop('_id', person) })}>
+            <span class="icon">
+              <i class="fas fa-edit has-text-link " />
+            </span>
+          </Link>
+
+          <span class="icon">
+            <i class="fas fa-trash has-text-danger " />
+          </span>
+
+        </td>
       </tr>
     {:else}
       {#if !loading}

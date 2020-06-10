@@ -1,6 +1,6 @@
 <script>
   import { map, prop } from "ramda";
-  import Select from "svelte-select";
+  import Select from "svelte-select/Select.js";
 
   import MultiSelection from "./Select/MultiSelection.svelte";
 
@@ -59,11 +59,5 @@
 <style>
   .select {
     display: block;
-  }
-
-  .error {
-    --border: 1px solid var(--brand-danger);
-    --borderHoverColor: var(--brand-danger);
-    --borderFocusColor: var(--brand-danger);
   }
 </style>
