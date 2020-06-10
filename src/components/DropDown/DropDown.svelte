@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { Button } from "svelma";
+  import Button from "svelma/src/components/Button.svelte";
   import * as transitions from "svelte/transition";
   import ClickOutside from "svelte-click-outside";
   const dispatch = createEventDispatcher();

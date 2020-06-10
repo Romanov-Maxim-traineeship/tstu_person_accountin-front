@@ -44,6 +44,7 @@
     "run-electron": "^1.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^0.23.1",
+    "svelte-loadable": "^1.5.0",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^3.9.6",
     "wait-on": "^3.2.0",
@@ -96,7 +97,6 @@
     "svelma": "^0.3.2",
     "svelte": "^3.23.0",
     "svelte-click-outside": "^1.0.0",
-    "svelte-loadable": "^1.5.0",
     "svelte-routing": "^1.4.2"
   }
 }

@@ -39,6 +39,7 @@ const svelteConfig = {
 
   resolve: {
     alias: {
+      svelte: path.resolve("node_modules", "svelte"),
       constants: path.resolve(__dirname, "src/constants/"),
       utils: path.resolve(__dirname, "src/utils/"),
       components: path.resolve(__dirname, "src/components/"),

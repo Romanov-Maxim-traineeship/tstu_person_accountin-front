@@ -1,4 +1,5 @@
 <script>
+  import { slide } from "svelte/transition";
   let isOpen = false;
 
   const toogle = () => (isOpen = !isOpen);
@@ -28,12 +29,13 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu {isOpen && 'is-active'}">
-    <div class="navbar-start">
-      <a class="navbar-item is-active">Home</a>
+    {#if isOpen}
+      <div class="navbar-start" transition:slide|local>
+        <a class="navbar-item is-active">Home</a>
 
-      <a class="navbar-item">Documentation</a>
+        <a class="navbar-item">Documentation</a>
 
-      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <!-- <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More</a>
 
         <div class="navbar-dropdown">
@@ -44,7 +46,8 @@
           <a class="navbar-item">Report an issue</a>
         </div>
       </div> -->
-    </div>
+      </div>
+    {/if}
 
     <div class="navbar-end">
       <div class="navbar-item">
